@@ -128,6 +128,7 @@ class _MyHomePageState extends State<MyHomePage> {
         controller: _controller,
         showVideoProgressIndicator: true,
         progressIndicatorColor: Colors.blueAccent,
+        showFullScreenButton: false,
         topActions: <Widget>[
           const SizedBox(width: 8.0),
           Expanded(

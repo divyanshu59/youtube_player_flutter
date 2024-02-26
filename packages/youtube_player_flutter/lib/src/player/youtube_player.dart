@@ -130,6 +130,13 @@ class YoutubePlayer extends StatefulWidget {
   /// {@endtemplate}
   final bool showVideoProgressIndicator;
 
+  /// {@template youtube_player_flutter.showFullScreenButton}
+  /// Defines whether to show or hide full screen button on player.
+  ///
+  /// Default is true.
+  /// {@endtemplate}
+  final bool showFullScreenButton;
+
   /// Creates [YoutubePlayer] widget.
   const YoutubePlayer({
     this.key,
@@ -148,6 +155,7 @@ class YoutubePlayer extends StatefulWidget {
     this.actionsPadding = const EdgeInsets.all(8.0),
     this.thumbnail,
     this.showVideoProgressIndicator = false,
+    this.showFullScreenButton= true,
   })  : progressColors = progressColors ?? const ProgressBarColors(),
         progressIndicatorColor = progressIndicatorColor ?? Colors.red;
 
@@ -378,8 +386,7 @@ class _YoutubePlayerState extends State<YoutubePlayer> {
                                 ),
                                 RemainingDuration(),
                                 const PlaybackSpeedButton(),
-                                FullScreenButton(),
-                              ],
+                                widget.showFullScreenButton ? FullScreenButton() : Container()                              ],
                         ),
                       ),
               ),
